@@ -11,6 +11,7 @@ const ActionButton = ({ children, setSelectedTitle }: Props) => {
   return (
     <AnchorLink className="rounded-md bg-midnight-green text-mint px-10 py-2 hover:bg-prussian-blue transition duration-100 hover:text-mint-green"
         onClick={()=>setSelectedTitle(SelectedTitle.CONTACT)}
+        href={`#${SelectedTitle.CONTACT}`}
     >
       {children}
     </AnchorLink>
