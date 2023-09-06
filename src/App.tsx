@@ -1,9 +1,11 @@
 import Navbar from "@/scenes/Navbar";
 import { useState } from "react";
+import { SelectedTitle } from "@/types/types";
+
 
 function App() {
 
-  const [selectedTitle,setSelectedTitle]=useState<string>('home')
+  const [selectedTitle,setSelectedTitle]=useState<SelectedTitle>(SelectedTitle.HOME)
 
   return (
     <div className="app bg-mint-green">

@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
 import logo from "@/assets/Logo.png";
 import Link from "./Link";
+import { SelectedTitle } from "@/types/types";
+
+
 type Props = {
-  selectedTitle: string;
-  setSelectedTitle: (value: string) => void;
+  selectedTitle: SelectedTitle;
+  setSelectedTitle: (value: SelectedTitle) => void;
 };
 
 const Navbar = ({ selectedTitle, setSelectedTitle }: Props) => {

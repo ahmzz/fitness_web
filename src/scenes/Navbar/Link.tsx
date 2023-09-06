@@ -1,13 +1,13 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import { SelectedTitle } from "@/types/types";
 type Props = {
   title: string;
-  selectedTitle: string;
-  setSelectedTitle: (value: string) => void;
+  selectedTitle: SelectedTitle;
+  setSelectedTitle: (value: SelectedTitle) => void;
 };
 
 const Link = ({ title, selectedTitle, setSelectedTitle }: Props) => {
-  const lowerCaseTitle = title.toLowerCase().replace(/ /g, "");
+  const lowerCaseTitle = title.toLowerCase().replace(/ /g, "") as SelectedTitle
 
   return (
     <AnchorLink
