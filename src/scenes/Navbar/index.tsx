@@ -3,6 +3,8 @@ import { Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
 import logo from "@/assets/Logo.png";
 import Link from "./Link";
 import { SelectedTitle } from "@/types/types";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import ActionButton from "@/shared/ActionButton";
 
 
 type Props = {
@@ -12,15 +14,17 @@ type Props = {
 
 const Navbar = ({ selectedTitle, setSelectedTitle }: Props) => {
   const flexBetween = "flex items-center justify-between";
+  const [menuToggle,setMenuToggle]=useState(false)
+  const isAboveMediumScreen=useMediaQuery("(min-width:1060px)")
 
   return (
     <nav>
       <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
         <div className={`${flexBetween} mx-auto w-11/12`}>
-          <div className={`${flexBetween} border-red-400 w-full `}>
+          <div className={`${flexBetween}  w-full `}>
             <img src={logo} alt="Logo" />
 
-            <div className={`${flexBetween} w-full`}>
+            {isAboveMediumScreen?(<div className={`${flexBetween} w-full`}>
               <div className={`${flexBetween} gap-8 text-sm`}>
                 <Link
                   title="Home"
@@ -43,11 +47,19 @@ const Navbar = ({ selectedTitle, setSelectedTitle }: Props) => {
                   setSelectedTitle={setSelectedTitle}
                 />
               </div>
-              <div className={`${flexBetween} gap-8`}>
+              <div className={`${flexBetween} gap-8 font-bold`}>
                 <p>Sign In</p>
-                <button>Become a VALORANT</button>
+                <ActionButton setSelectedTitle={setSelectedTitle}>Become a VALORANT</ActionButton>
               </div>
-            </div>
+            </div>): (
+              <button
+              className=" rounded-full bg-prussian-blue p-2"
+              onClick={()=>setMenuToggle(!menuToggle)}
+              >
+                <Bars3Icon className="h-6 w-6 text-mint-green"/>
+
+              </button>
+            ) }
           </div>
         </div>
       </div>

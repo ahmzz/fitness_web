@@ -12,8 +12,8 @@ const Link = ({ title, selectedTitle, setSelectedTitle }: Props) => {
   return (
     <AnchorLink
       className={`${
-        selectedTitle === lowerCaseTitle ? " text-delft-blue" : ""
-      } transition duration-500 hover:text-mint-green-900`}
+        selectedTitle === lowerCaseTitle ? " text-ucla-blue" : ""
+      } transition duration-500 hover:text-ucla-blue font-bold`}
       href={`#${lowerCaseTitle}`}
       onClick={()=>setSelectedTitle(lowerCaseTitle)}
     >
