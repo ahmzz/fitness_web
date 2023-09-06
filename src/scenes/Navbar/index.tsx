@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Bars3Icon, XCircleIcon } from "@heroicons/react/24/solid";
 import logo from "@/assets/Logo.png";
-type Props = {};
+import Link from "./Link";
+type Props = {
+  selectedTitle: string;
+  setSelectedTitle: (value: string) => void;
+};
 
-const Navbar = (props: Props) => {
+const Navbar = ({ selectedTitle, setSelectedTitle }: Props) => {
   const flexBetween = "flex items-center justify-between";
 
   return (
@@ -15,10 +19,26 @@ const Navbar = (props: Props) => {
 
             <div className={`${flexBetween} w-full`}>
               <div className={`${flexBetween} gap-8 text-sm`}>
-                <p>Home</p>
-                <p>Benefits</p>
-                <p>Classes</p>
-                <p>Contact Us</p>
+                <Link
+                  title="Home"
+                  selectedTitle={selectedTitle}
+                  setSelectedTitle={setSelectedTitle}
+                />
+                <Link
+                  title="Benefits"
+                  selectedTitle={selectedTitle}
+                  setSelectedTitle={setSelectedTitle}
+                />
+                <Link
+                  title="Our Classes"
+                  selectedTitle={selectedTitle}
+                  setSelectedTitle={setSelectedTitle}
+                />
+                <Link
+                  title="Contact Us"
+                  selectedTitle={selectedTitle}
+                  setSelectedTitle={setSelectedTitle}
+                />
               </div>
               <div className={`${flexBetween} gap-8`}>
                 <p>Sign In</p>

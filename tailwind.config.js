@@ -20,6 +20,8 @@ export default {
         "ucla-blue": "#406e8eff",
         "powder-blue": "#8ea8c3ff",
         "mint-green": "#cbf7edff",
+        "mint-green-400":"#e5fbf6",
+        "mint-green-900":"#79948e",
 
         // Third Color Palatte
         "carolina-blue": "#74b3ceff",
